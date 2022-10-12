@@ -69,19 +69,6 @@ require("lspconfig")["tsserver"].setup({
 require("lspconfig")["eslint"].setup({
 	capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 	on_attach = on_attach_formatting,
-	-- on_attach = function(client, bufnr)
-	-- 	client.server_capabilities.documentFormattingProvider = true
-	-- 	if client.server_capabilities.documentFormattingProvider then
-	-- 		local au_lsp = vim.api.nvim_create_augroup("eslint_lsp", { clear = true })
-	-- 		vim.api.nvim_create_autocmd("BufWritePre", {
-	-- 			pattern = "*",
-	-- 			callback = function()
-	-- 				vim.lsp.buf.format({ async = true })
-	-- 			end,
-	-- 			group = au_lsp,
-	-- 		})
-	-- 	end
-	-- end,
 	flags = lsp_flags,
 })
 require("lspconfig")["pyright"].setup({
