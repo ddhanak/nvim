@@ -1,3 +1,6 @@
+-- default
+vim.api.nvim_set_keymap("n", "<ESC>", ":noh<CR>", { silent = true })
+
 -- nvim tree
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { silent = true })
 
@@ -11,3 +14,9 @@ vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin'
 vim.api.nvim_set_keymap("n", "<leader>gs", ":Git<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>gp", ":Git push<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<CR>", { silent = true })
+
+-- hop
+vim.api.nvim_set_keymap("n", "<leader>hw", ":HopWord<CR>", { silent = true })
+
+-- trouble
+vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>", { silent = true })
