@@ -145,6 +145,11 @@ require("packer").startup(function(use)
 		end,
 	})
 
+	-- typescript
+	use({ "HerringtonDarkholme/yats.vim" })
+	-- use({ "maxmellon/vim-jsx-pretty" })
+	use({ "jose-elias-alvarez/typescript.nvim" })
+
 	-- -- Terminal
 	-- -- use({
 	-- --     "akinsho/toggleterm.nvim",
@@ -156,11 +161,6 @@ require("packer").startup(function(use)
 	-- use { "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
 	--     require("plugins.core.toggleterm")
 	-- end }
-
-	-- -- Typescript
-	-- use({ "HerringtonDarkholme/yats.vim" })
-	-- use({ "maxmellon/vim-jsx-pretty" })
-	-- use({ "jose-elias-alvarez/typescript.nvim" })
 
 	-- -- Colorizer
 	-- use({
