@@ -24,6 +24,8 @@ require("packer").startup(function(use)
 	use("tpope/vim-surround")
 	use("tpope/vim-repeat")
 
+	use("lukas-reineke/indent-blankline.nvim")
+
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.0",
@@ -39,8 +41,6 @@ require("packer").startup(function(use)
 			vim.api.nvim_command("colorscheme catppuccin")
 		end,
 	})
-
-	use("lukas-reineke/indent-blankline.nvim")
 
 	use({
 		"lewis6991/gitsigns.nvim",
@@ -147,9 +147,14 @@ require("packer").startup(function(use)
 
 	-- typescript
 	use({ "HerringtonDarkholme/yats.vim" })
-	-- use({ "maxmellon/vim-jsx-pretty" })
 	use({ "jose-elias-alvarez/typescript.nvim" })
 
+	use({
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end,
+	})
 	-- -- Terminal
 	-- -- use({
 	-- --     "akinsho/toggleterm.nvim",
@@ -161,14 +166,6 @@ require("packer").startup(function(use)
 	-- use { "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
 	--     require("plugins.core.toggleterm")
 	-- end }
-
-	-- -- Colorizer
-	-- use({
-	--     "norcalli/nvim-colorizer.lua",
-	--     config = function()
-	--         require("colorizer").setup()
-	--     end,
-	-- })
 
 	-- -- Glow for markdown preview
 	-- use({ "ellisonleao/glow.nvim" })
