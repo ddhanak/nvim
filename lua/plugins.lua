@@ -133,10 +133,18 @@ require("packer").startup(function(use)
 		},
 	})
 
-	-- null-ls
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
+	})
+
+	use({
+		"akinsho/bufferline.nvim",
+		tag = "v2.*",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			require("bufferline").setup({})
+		end,
 	})
 
 	-- -- Bufferline (tabs)
