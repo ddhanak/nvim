@@ -147,16 +147,6 @@ require("packer").startup(function(use)
 		end,
 	})
 
-	-- -- Bufferline (tabs)
-	-- use({
-	--     "akinsho/bufferline.nvim",
-	--     tag = "*",
-	--     requires = "kyazdani42/nvim-web-devicons",
-	--     config = function()
-	--         require("plugins.core.bufferline")
-	--     end,
-	-- })
-
 	-- -- Terminal
 	-- -- use({
 	-- --     "akinsho/toggleterm.nvim",

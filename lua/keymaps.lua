@@ -20,3 +20,9 @@ vim.api.nvim_set_keymap("n", "<leader>hw", ":HopWord<CR>", { silent = true })
 
 -- trouble
 vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>", { silent = true })
+
+-- bufferline
+vim.api.nvim_set_keymap("n", "[b", ":BufferLineCycleNext<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "]b", ":BufferLineCyclePrev<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>bdr", ":BufferLineCloseRight<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>bdl", ":BufferLineCloseLeft<CR>", { silent = true })
