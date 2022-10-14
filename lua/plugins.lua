@@ -15,7 +15,12 @@ require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	use("nvim-lua/plenary.nvim")
-	use("nvim-treesitter/nvim-treesitter")
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("conf.treesitter")
+		end,
+	})
 	use("nvim-treesitter/playground")
 	use("nvim-treesitter/nvim-treesitter-textobjects")
 
@@ -36,7 +41,7 @@ require("packer").startup(function(use)
 		"catppuccin/nvim",
 		as = "catppuccin",
 		config = function()
-			vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+			vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
 			require("catppuccin").setup()
 			vim.api.nvim_command("colorscheme catppuccin")
 		end,
@@ -192,5 +197,4 @@ end)
 
 require("conf.lsp")
 require("conf.cmp")
-require("conf.treesitter")
 require("conf.null-ls")
