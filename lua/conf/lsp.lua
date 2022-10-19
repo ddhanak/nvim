@@ -67,7 +67,7 @@ require("lspconfig")["tsserver"].setup({
 	flags = lsp_flags,
 })
 require("lspconfig")["eslint"].setup({
-	capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 	on_attach = on_attach_formatting,
 	flags = lsp_flags,
 })
