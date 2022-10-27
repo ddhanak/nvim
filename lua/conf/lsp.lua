@@ -47,6 +47,7 @@ end
 require("mason").setup()
 require("mason-lspconfig").setup()
 
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lsp_flags = {
 	-- This is the default in Nvim 0.7+
 	debounce_text_changes = 150,
@@ -63,15 +64,22 @@ require("lspconfig")["sumneko_lua"].setup({
 	},
 })
 require("lspconfig")["tsserver"].setup({
+	capabilities = capabilities,
 	on_attach = on_attach_no_formatting,
 	flags = lsp_flags,
 })
 require("lspconfig")["eslint"].setup({
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	capabilities = capabilities,
 	on_attach = on_attach_formatting,
 	flags = lsp_flags,
 })
 require("lspconfig")["pyright"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
+})
+require("lspconfig")["jsonls"].setup({
+	capabilities = capabilities,
 	on_attach = on_attach,
 	flags = lsp_flags,
 })
