@@ -83,6 +83,11 @@ require("lspconfig")["jsonls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 })
+require("lspconfig")["astro"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
+})
 require("lspconfig")["yamlls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
