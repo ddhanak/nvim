@@ -27,3 +27,6 @@ vim.api.nvim_set_keymap("n", "]b", ":BufferLineCyclePrev<CR>", { silent = true }
 vim.api.nvim_set_keymap("n", "<leader>bs", ":BufferLinePick<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>bdr", ":BufferLineCloseRight<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>bdl", ":BufferLineCloseLeft<CR>", { silent = true })
+
+-- toggleterm
+vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { silent = true })

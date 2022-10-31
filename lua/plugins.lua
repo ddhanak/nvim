@@ -160,17 +160,14 @@ require("packer").startup(function(use)
 			require("colorizer").setup()
 		end,
 	})
-	-- -- Terminal
-	-- -- use({
-	-- --     "akinsho/toggleterm.nvim",
-	-- --     config = function()
-	-- --         require("plugins.core.toggleterm")
-	-- --     end,
-	-- -- })
 
-	-- use { "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
-	--     require("plugins.core.toggleterm")
-	-- end }
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "*",
+		config = function()
+			require("conf.toggleterm")
+		end,
+	})
 
 	-- -- Glow for markdown preview
 	-- use({ "ellisonleao/glow.nvim" })
