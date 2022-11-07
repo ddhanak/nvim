@@ -75,7 +75,11 @@ require("packer").startup(function(use)
 		"nvim-tree/nvim-tree.lua",
 		requires = { "nvim-tree/nvim-web-devicons" },
 		config = function()
-			require("nvim-tree").setup()
+			require("nvim-tree").setup({
+				view = {
+					adaptive_size = true,
+				},
+			})
 		end,
 	})
 
