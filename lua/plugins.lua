@@ -78,6 +78,7 @@ require("packer").startup(function(use)
 			require("nvim-tree").setup({
 				view = {
 					adaptive_size = true,
+					width = 45,
 				},
 			})
 		end,

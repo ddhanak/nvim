@@ -1,5 +1,7 @@
 -- default
 vim.api.nvim_set_keymap("n", "<ESC>", ":noh<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { silent = true })
+vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", { silent = true })
 
 -- nvim tree
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { silent = true })
