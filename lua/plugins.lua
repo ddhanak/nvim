@@ -117,6 +117,13 @@ require("packer").startup(function(use)
 		"neovim/nvim-lspconfig",
 	})
 
+	use({
+		"simrat39/rust-tools.nvim",
+		config = function()
+			require("conf.rust-tools")
+		end,
+	})
+
 	-- autocomplete
 	use({
 		"hrsh7th/nvim-cmp",
