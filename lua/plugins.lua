@@ -29,6 +29,7 @@ require("packer").startup(function(use)
 	use("tpope/vim-surround")
 	use("tpope/vim-repeat")
 
+	use("folke/tokyonight.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 
 	use({
@@ -37,13 +38,28 @@ require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
+	-- use({
+	-- 	"catppuccin/nvim",
+	-- 	as = "catppuccin",
+	-- 	config = function()
+	-- 		vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+	-- 		require("catppuccin").setup()
+	-- 		vim.api.nvim_command("colorscheme catppuccin")
+	-- 	end,
+	-- })
+	--
+
 	use({
-		"catppuccin/nvim",
-		as = "catppuccin",
+		"nvim-lualine/lualine.nvim",
+		requires = {
+			"kyazdani42/nvim-web-devicons",
+		},
 		config = function()
-			vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
-			require("catppuccin").setup()
-			vim.api.nvim_command("colorscheme catppuccin")
+			require("lualine").setup({
+				options = {
+					theme='tokyonight'
+				}
+			})
 		end,
 	})
 
@@ -58,16 +74,6 @@ require("packer").startup(function(use)
 		"windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup()
-		end,
-	})
-
-	use({
-		"nvim-lualine/lualine.nvim",
-		requires = {
-			"kyazdani42/nvim-web-devicons",
-		},
-		config = function()
-			require("lualine").setup()
 		end,
 	})
 
@@ -180,6 +186,8 @@ require("packer").startup(function(use)
 			require("conf.toggleterm")
 		end,
 	})
+
+	use({ "b0o/schemastore.nvim" })
 
 	-- -- Glow for markdown preview
 	-- use({ "ellisonleao/glow.nvim" })

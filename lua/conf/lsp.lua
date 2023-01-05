@@ -63,11 +63,11 @@ require("lspconfig")["sumneko_lua"].setup({
 		},
 	},
 })
-require("lspconfig")["tsserver"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach_no_formatting,
-	flags = lsp_flags,
-})
+-- require("lspconfig")["tsserver"].setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach_no_formatting,
+-- 	flags = lsp_flags,
+-- })
 require("lspconfig")["eslint"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach_formatting,
@@ -82,6 +82,12 @@ require("lspconfig")["jsonls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	flags = lsp_flags,
+	settings = {
+		json = {
+			schemas = require("schemastore").json.schemas(),
+			validate = { enable = true },
+		},
+	},
 })
 require("lspconfig")["astro"].setup({
 	capabilities = capabilities,
@@ -92,6 +98,21 @@ require("lspconfig")["bashls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	flags = lsp_flags,
+})
+require("lspconfig")["marksman"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
+})
+require("typescript").setup({
+	server = {
+		capabilities = capabilities,
+		on_attach = on_attach_no_formatting,
+		flags = lsp_flags,
+	},
+	-- capabilities = capabilities,
+	-- on_attach = on_attach,
+	-- flags = lsp_flags,
 })
 require("lspconfig")["yamlls"].setup({
 	capabilities = capabilities,

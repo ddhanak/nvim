@@ -2,6 +2,7 @@ vim.opt.termguicolors = true
 
 vim.cmd("syntax enable")
 vim.cmd("filetype plugin indent on")
+vim.cmd[[colorscheme tokyonight]]
 
 vim.bo.expandtab = true
 vim.bo.shiftwidth = 4
